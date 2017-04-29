@@ -1,0 +1,8 @@
+#!/bin/bash
+i=0
+for files in input/*.txt
+do
+  cat $files | ./d3 &> "output/output_$i.txt"
+  diff "expected/output_$i.txt" "output/output_$i.txt" | tee touch "diffs/diff_$i.txt"
+  ((i++))
+done  
