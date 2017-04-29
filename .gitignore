@@ -1,0 +1,9 @@
+# all I/O  files
+*.txt
+
+# all folders containing I/O files
+input/
+output/
+expected/
+diffs/
+
