@@ -7,3 +7,5 @@ output/
 expected/
 diffs/
 
+# execs
+d*
