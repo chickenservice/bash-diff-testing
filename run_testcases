@@ -1,8 +1,11 @@
 #!/bin/bash
-i=0
-for files in input/*.txt
+
+for dir in */;
 do
-  cat $files | ./d3 &> "output/output_$i.txt"
-  diff "expected/output_$i.txt" "output/output_$i.txt" | tee touch "diffs/diff_$i.txt"
-  ((i++))
+  pushd $dir > /dev/null
+  
+  colordiff out <(cat in | ../d3)
+  
+  popd > /dev/null
+  echo OK
 done  
